@@ -18,8 +18,8 @@ export default async function Detail({ params }: { params: { id?: string } }) {
   );
   console.log(eposides);
   return (
-    <div className="mt-10">
-      <Card className="p-10">
+    <div className="mt-2 lg:mt-10">
+      <Card className="p-4 lg:p-10">
         <CardTitle>{detailData.name}</CardTitle>
         <CardDescription className="flex gap-5">
           <span>{detailData.gender}</span>
