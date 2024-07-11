@@ -1,15 +1,15 @@
 "use client";
 
 import { Input } from "@/components/ui/input";
-import useCharacter from "@/hooks/getCharacter";
-import { fetchGet } from "@/utils/fetch";
+import useDebounce from "@/hooks/useDebounce";
+import { useSearch } from "@/hooks/useSearch";
 import { useEffect, useState } from "react";
 
 export const Search = () => {
   const [searchContent, setSearchContent] = useState("");
-  const [page, setPage] = useState(0);
+  const debouncedSearchContent = useDebounce(searchContent, 500)
 
-  useCharacter(page)
+  useSearch({searchContent: debouncedSearchContent})
 
   return (
     <div>
